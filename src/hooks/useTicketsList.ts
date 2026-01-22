@@ -33,7 +33,7 @@ export function useTicketsList({ scope, userId, refreshKey }: Options) {
         setTickets([]);
         setError(result.error);
       } else {
-        setTickets(result.data);
+        setTickets(result.data ?? []);
       }
       setLoading(false);
       return;
@@ -44,7 +44,7 @@ export function useTicketsList({ scope, userId, refreshKey }: Options) {
       setTickets([]);
       setError(result.error);
     } else {
-      setTickets(result.data);
+      setTickets(result.data ?? []);
     }
     setLoading(false);
   }, [scope, userId]);
